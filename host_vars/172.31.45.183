@@ -1,0 +1,8 @@
+---
+ a: Radha
+ b: 123456
+ c: 8989
+ d: /home/Radha
+ e: "a normal user"
+ f: /bin/bash
+...

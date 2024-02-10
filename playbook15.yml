@@ -1,0 +1,21 @@
+---
+- name: Error handling or Exception handling
+  hosts: all
+  tasks:
+    - block:
+      - name: INstall git on ubuntu server using apt
+        apt:
+          name: git
+          state: present
+          update_cache: yes
+      rescue:
+        - name: install git on centos machine
+          yum:
+            name: git
+            state: present
+            update_cache: yes
+      always:
+        - name: Display success msg
+          debug:
+            msg: "git installatio successfull"
+...

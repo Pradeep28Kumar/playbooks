@@ -1,0 +1,15 @@
+---
+- name: Install/uninstall or upgrade s/w applications
+  hosts: all
+  tasks:
+    - name: INstall/uninstall or upgrade
+      apt:
+        name: "{{item.a}}"
+        state: "{{item.b}}"
+        update_cache: "{{c}}"
+      with_items:
+        - {a: tree,b: present,c: no}
+        - {a: git,b: absent,c: no}
+        - {a: maven,b: latest,c: yes}
+...
+          
